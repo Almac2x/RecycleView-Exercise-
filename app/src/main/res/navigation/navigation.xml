@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/designerTab_fragment">
+
+    <fragment
+        android:id="@+id/designerTab_fragment"
+        android:name="com.almac2x.recyclerviewexercise.Fragments.DesignerTab_fragment"
+        android:label="fragment_designer_tab_fragment"
+        tools:layout="@layout/fragment_designer_tab_fragment" >
+        <action
+            android:id="@+id/action_designerTab_fragment_to_category_Fragment"
+            app:destination="@id/category_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/category_Fragment"
+        android:name="com.almac2x.recyclerviewexercise.Category_Fragment"
+        android:label="fragment_category_layout"
+        tools:layout="@layout/fragment_category_layout" >
+        <action
+            android:id="@+id/action_category_Fragment_to_designerTab_fragment"
+            app:destination="@id/designerTab_fragment" />
+        <action
+            android:id="@+id/action_category_Fragment_to_attention_Fragment"
+            app:destination="@id/attention_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/attention_Fragment"
+        android:name="com.almac2x.recyclerviewexercise.Attention_Fragment"
+        android:label="fragment_attention_layout"
+        tools:layout="@layout/fragment_attention_layout" >
+        <action
+            android:id="@+id/action_attention_Fragment_to_category_Fragment"
+            app:destination="@id/category_Fragment" />
+    </fragment>
+</navigation>

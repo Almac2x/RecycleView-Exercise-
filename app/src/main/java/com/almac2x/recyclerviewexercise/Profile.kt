@@ -8,7 +8,7 @@ data class Profile (
     var ranking : Int?,
     var popularityNumber: Int?,
     var likes: Int?,
-    var follower: String?,
+    var follower: Int?,
     var imageLoc: String?
         )
 

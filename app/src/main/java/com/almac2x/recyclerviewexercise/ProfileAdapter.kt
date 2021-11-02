@@ -15,10 +15,14 @@ class ProfileAdapter(val context: Context, private val data:MutableList<Profile>
 
     inner class MyViewHolder (val binding: ItemProfilesBinding) :RecyclerView.ViewHolder(binding.root) {
 
-        fun bindProjectInfo(name: String, title:String, rank : Int?, ) {
+        fun bindProjectInfo(name: String, title:String, rank : Int?, popularity:Int?,like:Int?,followed:Int? ) {
 
             binding.personTextView.text = name
             binding.titleTextView.text = title
+            binding.rankingTextView.text = rank.toString()
+            binding.popularityNumberTextView.text = popularity.toString()
+            binding.likeNumberTextView.text = like.toString()
+            binding.followedNumberTextView.text = followed.toString()
 
         }
 
@@ -39,8 +43,10 @@ class ProfileAdapter(val context: Context, private val data:MutableList<Profile>
         val item = data[position]
         val name = "${item.firstName} ${item.lastName}"
         holder.bindImage(url = item.imageLoc)
-        holder.bindProjectInfo(name = name, rank = item.ranking, title = item.title.toString())
+        holder.bindProjectInfo(name = name, rank = item.ranking, title = item.title.toString(), followed = item.follower,
+            like = item.likes, popularity =  item.popularityNumber
 
+        )
     }
 
     override fun getItemCount(): Int {

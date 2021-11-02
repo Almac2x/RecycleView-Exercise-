@@ -13,10 +13,13 @@
         <action
             android:id="@+id/action_designerTab_fragment_to_category_Fragment"
             app:destination="@id/category_Fragment" />
+        <action
+            android:id="@+id/action_designerTab_fragment_to_attention_Fragment"
+            app:destination="@id/attention_Fragment" />
     </fragment>
     <fragment
         android:id="@+id/category_Fragment"
-        android:name="com.almac2x.recyclerviewexercise.Category_Fragment"
+        android:name="com.almac2x.recyclerviewexercise.Fragments.Category_Fragment"
         android:label="fragment_category_layout"
         tools:layout="@layout/fragment_category_layout" >
         <action
@@ -25,14 +28,20 @@
         <action
             android:id="@+id/action_category_Fragment_to_attention_Fragment"
             app:destination="@id/attention_Fragment" />
+        <action
+            android:id="@+id/action_category_Fragment_to_designerTab_fragment2"
+            app:destination="@id/designerTab_fragment" />
     </fragment>
     <fragment
         android:id="@+id/attention_Fragment"
-        android:name="com.almac2x.recyclerviewexercise.Attention_Fragment"
+        android:name="com.almac2x.recyclerviewexercise.Fragments.Attention_Fragment"
         android:label="fragment_attention_layout"
         tools:layout="@layout/fragment_attention_layout" >
         <action
             android:id="@+id/action_attention_Fragment_to_category_Fragment"
             app:destination="@id/category_Fragment" />
+        <action
+            android:id="@+id/action_attention_Fragment_to_designerTab_fragment"
+            app:destination="@id/designerTab_fragment" />
     </fragment>
 </navigation>

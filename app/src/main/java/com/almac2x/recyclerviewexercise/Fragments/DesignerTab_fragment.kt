@@ -7,26 +7,27 @@ import android.view.View
 import android.view.View.inflate
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import com.almac2x.recyclerviewexercise.ProfileAdapter
 import com.almac2x.recyclerviewexercise.R
+import com.almac2x.recyclerviewexercise.databinding.FragmentDesignerTabFragmentBinding
+import com.almac2x.recyclerviewexercise.viewmodel.MyViewModel
 
 
-class DesignerTab_fragment : Fragment() {
+class DesignerTab_fragment : Fragment(R.layout.fragment_designer_tab_fragment) {
 
-    private var param1: String? = null
-    private var param2: String? = null
+    lateinit var myViewModel : MyViewModel
+    lateinit var binding: FragmentDesignerTabFragmentBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    }
+        myViewModel = ViewModelProvider(this).get(MyViewModel::class.java)
+        binding = FragmentDesignerTabFragmentBinding.bind(view)
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        val rcv = binding.rcsv
+        rcv?.adapter = ProfileAdapter(requireContext(),myViewModel.profile)
 
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_designer_tab_fragment, container, false).rootView
     }
 
 
